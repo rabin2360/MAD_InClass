@@ -84,3 +84,33 @@ if let currentScore = score
 let newScore : Int! = 95
 print("value \(newScore)")
 
+//class
+class Vehicle
+{
+ var wheelNum = 4
+ var speed = 55
+ var mpg = 20
+ let tankCapacity = 20
+    var name: String?
+    
+    func changeSpeed(amount : Int)
+    {
+        speed += amount
+    }
+    
+    func changeEfficiency(speed newSpeed: Int, mpg newmpg: Int)
+    {
+     speed = newSpeed
+        mpg = newmpg
+    }
+}
+
+
+var myJeep = Vehicle()
+myJeep.speed
+myJeep.wheelNum
+myJeep.changeSpeed(10)
+myJeep.speed
+myJeep.changeEfficiency(speed: 20, mpg: 40)
+myJeep.speed
+myJeep.mpg

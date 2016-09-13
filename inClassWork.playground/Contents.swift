@@ -62,8 +62,10 @@ var score: Int?
 print(score)
 
 score = 80
+
 //printing WITHOUT unwrapping
 print(score)
+
 //printing AFTER unwrapping
 print(score!)
 
@@ -87,26 +89,37 @@ print("value \(newScore)")
 //class
 class Vehicle
 {
- var wheelNum = 4
- var speed = 55
- var mpg = 20
- let tankCapacity = 20
+    //must have defaults or need to be OPTIONALS
+    var wheelNum = 4
+    var speed = 55
+    var mpg = 20
+    let tankCapacity = 20
     var name: String?
     
     func changeSpeed(amount : Int)
-    {
-        speed += amount
-    }
+        {
+            speed += amount
+        }
     
     func changeEfficiency(speed newSpeed: Int, mpg newmpg: Int)
+        {
+            speed = newSpeed
+            mpg = newmpg
+        }
+    
+    init(vehicleName vname: String)
     {
-     speed = newSpeed
-        mpg = newmpg
+        name = vname
+    }
+    
+    init()
+    {
+        //name = nil
     }
 }
 
 
-var myJeep = Vehicle()
+var myJeep = Vehicle(vehicleName: "Sally")
 myJeep.speed
 myJeep.wheelNum
 myJeep.changeSpeed(10)
@@ -114,3 +127,17 @@ myJeep.speed
 myJeep.changeEfficiency(speed: 20, mpg: 40)
 myJeep.speed
 myJeep.mpg
+myJeep.name
+
+
+var myHybrid = Vehicle()
+myHybrid.name
+myHybrid.changeSpeed(23)
+myHybrid.speed
+
+//puts new object in it
+myHybrid = Vehicle(vehicleName: "Rhonda")
+myHybrid.name
+myHybrid.speed
+
+

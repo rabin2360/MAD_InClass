@@ -18,31 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BB_Family" translatesAutoresizingMaskIntoConstraints="NO" id="OTu-Aw-afc">
-                                <rect key="frame" x="175" y="43" width="250" height="268"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="268" id="Q7b-Dn-BLN"/>
-                                    <constraint firstAttribute="width" constant="250" id="dCH-w2-EXA"/>
-                                    <constraint firstAttribute="height" constant="268" id="nlP-mR-Ley"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="nlP-mR-Ley"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=regular">
-                                    <mask key="constraints">
-                                        <exclude reference="Q7b-Dn-BLN"/>
-                                        <exclude reference="dCH-w2-EXA"/>
-                                        <include reference="nlP-mR-Ley"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="n9s-CF-usl">
                                 <rect key="frame" x="276" y="474" width="51" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="lkv-4p-OhZ"/>
                                 </constraints>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="176" y="474" width="51" height="29"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="376" y="50" width="51" height="29"/>
                                     <mask key="constraints">
@@ -113,6 +96,19 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BB_Family" translatesAutoresizingMaskIntoConstraints="NO" id="OTu-Aw-afc">
+                                <rect key="frame" x="175" y="43" width="250" height="268"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="268" id="Q7b-Dn-BLN"/>
+                                    <constraint firstAttribute="width" constant="250" id="dCH-w2-EXA"/>
+                                </constraints>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Q7b-Dn-BLN"/>
+                                        <include reference="dCH-w2-EXA"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

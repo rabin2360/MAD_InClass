@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var checkAmount: UITextField!
     @IBOutlet weak var tipPercent: UITextField!
     @IBOutlet weak var people: UITextField!
-    @IBOutlet weak var tipDue: UITextField!
+    @IBOutlet weak var tipDue: UILabel!
     @IBOutlet weak var totalDue: UILabel!
     @IBOutlet weak var totalDuePerPerson: UILabel!
     

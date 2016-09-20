@@ -181,7 +181,7 @@
                     <connections>
                         <outlet property="checkAmount" destination="U05-Bf-CF3" id="Mhh-aT-mxa"/>
                         <outlet property="people" destination="kgI-p0-nWc" id="WdP-nK-dnr"/>
-                        <outlet property="tipDue" destination="kgI-p0-nWc" id="C3C-xV-4PH"/>
+                        <outlet property="tipDue" destination="c2z-cL-QXY" id="npr-fc-jlo"/>
                         <outlet property="tipPercent" destination="rxy-sE-uJA" id="ChQ-hK-TAs"/>
                         <outlet property="totalDue" destination="cp7-OO-cQL" id="S7M-uy-rOB"/>
                         <outlet property="totalDuePerPerson" destination="vd4-7I-GW4" id="wN9-A7-lOh"/>

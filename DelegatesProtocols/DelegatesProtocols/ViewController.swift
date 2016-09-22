@@ -74,9 +74,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if numberOfPeople != nil
         {
+            //how many people are entered!
             if numberOfPeople > 0
             {
                 personTotal = total / Float(numberOfPeople!)
+            }
+            else
+            {
+                //create UIAlertController object
+                let alert = UIAlertController(title: "Warning", message: "Invalid # of people entered!", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+                
+                alert.addAction(cancelAction)
+                
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:
+                    {
+                        action in
+                        self.people.text = "1"
+                        self.updateTipTotals()
+                })
+                
+                alert.addAction(okAction)
+                presentViewController(alert, animated: true, completion: nil)
+                
             }
         }
         

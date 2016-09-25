@@ -243,6 +243,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="GNb-lg-Tzs" firstAttribute="leading" secondItem="6D7-4q-vLz" secondAttribute="leading" id="04y-mG-yQs"/>
                             <constraint firstItem="U05-Bf-CF3" firstAttribute="leading" secondItem="rxy-sE-uJA" secondAttribute="leading" id="0MW-Xh-4Pb">
@@ -518,6 +519,9 @@
                                 <include reference="Jn8-oq-Lom"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ckh-bO-Lbd" appends="YES" id="tfx-Kl-bao"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="checkAmount" destination="U05-Bf-CF3" id="Mhh-aT-mxa"/>
@@ -529,6 +533,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ckh-bO-Lbd">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="DJY-CA-v1O"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="447" y="426"/>
         </scene>

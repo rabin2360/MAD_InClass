@@ -110,4 +110,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 }
     
+    @IBAction func tapGesture(sender: AnyObject) {
+        checkAmount.resignFirstResponder()
+        tipPercent.resignFirstResponder()
+        people.resignFirstResponder()
+    }
 }

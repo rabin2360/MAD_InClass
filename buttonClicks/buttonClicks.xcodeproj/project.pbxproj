@@ -403,6 +403,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CU.buttonClicks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -414,6 +415,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CU.buttonClicks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -482,6 +484,7 @@
 				132E3CD81D78951A001C8B16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		132E3CD91D78951A001C8B16 /* Build configuration list for PBXNativeTarget "buttonClicksTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +493,7 @@
 				132E3CDB1D78951A001C8B16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		132E3CDC1D78951A001C8B16 /* Build configuration list for PBXNativeTarget "buttonClicksUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +502,7 @@
 				132E3CDE1D78951A001C8B16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

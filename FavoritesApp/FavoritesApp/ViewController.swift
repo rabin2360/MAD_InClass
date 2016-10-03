@@ -10,6 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var favoriteAuthor: UILabel!
+    @IBOutlet weak var favoriteBook: UILabel!
+    @IBOutlet weak var bookYear: UILabel!
+    
+    var user = Favorite()
+    
+    @IBAction func unwindSegue(segue:UIStoryboardSegue)
+    {
+        favoriteAuthor.text = user.favAuthor
+        favoriteBook.text = user.favBook
+        bookYear.text = user.year
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

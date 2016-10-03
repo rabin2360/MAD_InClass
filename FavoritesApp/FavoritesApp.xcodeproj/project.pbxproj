@@ -15,6 +15,7 @@
 		13A1336C1D9AF08000CCA326 /* FavoritesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A1336B1D9AF08000CCA326 /* FavoritesAppTests.swift */; };
 		13A133771D9AF08000CCA326 /* FavoritesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A133761D9AF08000CCA326 /* FavoritesAppUITests.swift */; };
 		13A133851D9AF24E00CCA326 /* Scene2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A133841D9AF24E00CCA326 /* Scene2ViewController.swift */; };
+		86123CE21DA2BB4400DB98F8 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86123CE11DA2BB4400DB98F8 /* Favorite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		13A133761D9AF08000CCA326 /* FavoritesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAppUITests.swift; sourceTree = "<group>"; };
 		13A133781D9AF08000CCA326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13A133841D9AF24E00CCA326 /* Scene2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene2ViewController.swift; sourceTree = "<group>"; };
+		86123CE11DA2BB4400DB98F8 /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Favorite.swift; path = ../Favorite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				13A133561D9AF08000CCA326 /* AppDelegate.swift */,
 				13A133581D9AF08000CCA326 /* ViewController.swift */,
 				13A1335A1D9AF08000CCA326 /* Main.storyboard */,
+				86123CE11DA2BB4400DB98F8 /* Favorite.swift */,
 				13A133841D9AF24E00CCA326 /* Scene2ViewController.swift */,
 				13A1335D1D9AF08000CCA326 /* Assets.xcassets */,
 				13A1335F1D9AF08000CCA326 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13A133591D9AF08000CCA326 /* ViewController.swift in Sources */,
+				86123CE21DA2BB4400DB98F8 /* Favorite.swift in Sources */,
 				13A133571D9AF08000CCA326 /* AppDelegate.swift in Sources */,
 				13A133851D9AF24E00CCA326 /* Scene2ViewController.swift in Sources */,
 			);
@@ -488,6 +492,7 @@
 				13A1337D1D9AF08000CCA326 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13A1337E1D9AF08000CCA326 /* Build configuration list for PBXNativeTarget "FavoritesAppTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +501,7 @@
 				13A133801D9AF08000CCA326 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13A133811D9AF08000CCA326 /* Build configuration list for PBXNativeTarget "FavoritesAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +510,7 @@
 				13A133831D9AF08000CCA326 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

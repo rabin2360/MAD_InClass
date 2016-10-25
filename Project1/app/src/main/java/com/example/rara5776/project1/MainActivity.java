@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,11 +14,14 @@ public class MainActivity extends AppCompatActivity {
     Button booButton;
     TextView booLabel;
     EditText booTextField;
+    ImageView image;
 
     public void buttonPressed(View view)
     {
         String enteredText = booTextField.getText().toString();
         booLabel.setText("Happy Halloween: "+enteredText+"!");
+        //setting the source for the image
+        image.setImageResource(R.drawable.ghost);
     }
 
     @Override
@@ -27,5 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         booLabel = (TextView) findViewById(R.id.message);
         booTextField = (EditText) findViewById(R.id.enterBooText);
+        image = (ImageView) findViewById(R.id.imageView);
+
     }
 }

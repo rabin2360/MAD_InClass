@@ -29,8 +29,8 @@
         android:onClick="buttonPressed"/>
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
         android:id="@+id/enterBooText"
         android:layout_below="@+id/message"
         android:layout_marginTop="40dp"
@@ -39,7 +39,8 @@
         android:hint="@string/name"
         android:layout_alignRight="@+id/button"
         android:layout_alignEnd="@+id/button"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:maxLength="20"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -47,9 +48,21 @@
         android:id="@+id/imageView"
         android:layout_alignRight="@+id/message"
         android:layout_alignEnd="@+id/message"
-        android:layout_below="@+id/enterBooText"
         android:layout_alignLeft="@+id/message"
-        android:layout_alignStart="@+id/message" />
+        android:layout_alignStart="@+id/message"
+        android:layout_below="@+id/enterBooText" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:id="@+id/charRemaining"
+        android:layout_above="@+id/button"
+        android:layout_alignLeft="@+id/message"
+        android:layout_alignStart="@+id/message"
+        android:layout_alignRight="@+id/message"
+        android:layout_alignEnd="@+id/message"
+        android:textAlignment="center"
+        />
 
 
 </RelativeLayout>

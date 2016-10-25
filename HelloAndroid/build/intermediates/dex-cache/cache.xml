@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_1f638dfaf18ba739a7ac3b7a37c2042ecbbd2c71.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_e6d3dacd4d1d5571b3c6bd00ddb67a04a473a3f5.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_079cffafdbf0392f44d55a7be0e4f2a287659186.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_c45c8d27a8865f9b98b55ad46050b22c73fd46aa.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_976fab8849918b3b5d6f7dcd742fc8ef21c9e52e.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_15b7b38874a1ae05b7ce0621d13db07d78e2df92.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="54f33eec3e8e1e2023a80d7ede2f870df78387ce">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_9d6f18e54c361f9396002d70096e5b31fa8aa92c.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_38cec2a59f1fe0c433738c05b873992fb3f7a353.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_f8bb3398db6c27e41975455af66a1ca693cf824d.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_71d14760e9263cc8c658944743bde3c53d6b7974.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_66421b3aacc1dd23dff9b4abe6c3f3b24aa287ab.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_4bfa1d4a984e08645aa10947e9bf61b6d71a03d3.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_ec673ec389d4ac5d8564d1fab3bba39c0ce601cb.jar" />
+    </item>
+    <item
+        jar="/Library/Android/SDK/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_f66b693d46158733a2b7fc9b4615998499a0f5db.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="cd1f06bfc3c82104bdca8cd90a78729b81eb26e4">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/instant-run_ade46a84d0b0deb88472462b98358f377b2bf16a.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_0893bb071c83cf61a55c300d8c5bbc227b4f4460.jar" />
+    </item>
+    <item
+        jar="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/rara5776/Documents/MAD_InClass/HelloAndroid/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_b845eea78311825982e5d72e250c07da70e5337d.jar" />
+    </item>
+
+</items>

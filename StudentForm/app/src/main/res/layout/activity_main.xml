@@ -38,7 +38,8 @@
         android:id="@+id/submitButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="54dp" />
+        android:layout_marginBottom="54dp"
+        android:onClick="submitButtonPressed"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -57,6 +58,70 @@
         android:layout_toRightOf="@+id/studentNameLabel"
         android:layout_toEndOf="@+id/studentNameLabel"
         android:entries="@array/studentGrades"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:ems="10"
+        android:layout_centerHorizontal="true"/>
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/toggleStudent"
+        android:ems="8"
+        android:layout_marginTop="25dp"
+        android:checked="false"
+        android:textOn="@string/toggle_on"
+        android:textOff="@string/toggle_off"
+        android:layout_below="@+id/spinner"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/meditate_switch"
+        android:id="@+id/switch1"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/toggleStudent"
+        android:layout_alignStart="@+id/toggleStudent"
+        android:layout_alignRight="@+id/toggleStudent"
+        android:layout_alignEnd="@+id/toggleStudent"
+        android:ems="10"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="radioGroup"
+        android:id="@+id/radioButtonGroup"
+        android:layout_below="@id/switch1"
+        android:layout_alignLeft="@id/editText"
+        android:layout_alignRight="@id/editText"
+        >
+
+        <RadioButton
+            android:id="@+id/firstButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "firstOne"
+            />
+
+        <RadioButton
+            android:id="@+id/secondButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "secondOne"
+            />
+
+    </RadioGroup>
 
 
 </RelativeLayout>

@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Student Form</string>
     <string name="student_form_title"><b>Student Information Form</b></string>
+    <string name="toggle_on">On String</string>
+    <string name="toggle_off">Off String</string>
+    <string name="meditate_switch">Meditate</string>
 
     <string-array name="studentGrades">
         <item>1</item>

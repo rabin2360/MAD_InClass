@@ -4,6 +4,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     ToggleButton studentToggle;
     Switch studentSwitch;
     RadioGroup radioGroupVar;
+    CheckBox checkBox1;
+    CheckBox checkBox2;
 
     //view variables
     String studentGradeStr;
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         //submit button has been pressed
         Log.v("Name: ", studentName.getText().toString());
 
+        studentGradeStr = String.valueOf(studentGrades.getSelectedItem());
+        Log.v("Student Grade: ", studentGradeStr);
 
         //processing the toggle button
         String toggleString;
@@ -80,6 +85,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Log.v("Radio Button Type:", radioButtonType);
+
+        boolean check1 = checkBox1.isChecked();
+        boolean check2 = checkBox2.isChecked();
+
+        if(check1)
+        {
+            Log.v("Check1:", "is enabled" );
+        }
+
+        if(check2)
+        {
+            Log.v("Check2: ", "is enabled");
+        }
     }
 
     @Override
@@ -92,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
 
         //spinner
         studentGrades = (Spinner)findViewById(R.id.spinner);
-        studentGradeStr = String.valueOf(studentGrades.getSelectedItem());
 
         //toggle
         studentToggle = (ToggleButton) findViewById(R.id.toggleStudent);
@@ -102,6 +119,12 @@ public class MainActivity extends AppCompatActivity {
 
         //radio group
         radioGroupVar = (RadioGroup) findViewById(R.id.radioButtonGroup);
+
+        //check box 1
+        checkBox1 = (CheckBox)findViewById(R.id.checkBox);
+
+        //check box 2
+        checkBox2 = (CheckBox) findViewById(R.id.checkBox2);
     }
 
 }

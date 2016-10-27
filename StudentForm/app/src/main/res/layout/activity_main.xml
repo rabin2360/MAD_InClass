@@ -33,13 +33,12 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Submit"
         android:id="@+id/submitButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="54dp"
-        android:onClick="submitButtonPressed"/>
+        android:onClick="submitButtonPressed"
+        android:layout_below="@+id/checkBox2"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -53,6 +52,7 @@
     <Spinner
         android:layout_width="180dp"
         android:layout_height="30dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/spinner"
         android:layout_below="@+id/studentNameLabel"
         android:layout_toRightOf="@+id/studentNameLabel"
@@ -90,12 +90,13 @@
         android:layout_height="wrap_content"
         android:text="@string/meditate_switch"
         android:id="@+id/switch1"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/toggleStudent"
         android:layout_alignLeft="@+id/toggleStudent"
         android:layout_alignStart="@+id/toggleStudent"
         android:layout_alignRight="@+id/toggleStudent"
         android:layout_alignEnd="@+id/toggleStudent"
-        android:ems="10"/>
+        android:ems="10"
+        android:layout_marginTop="20dp"/>
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -105,6 +106,7 @@
         android:layout_below="@id/switch1"
         android:layout_alignLeft="@id/editText"
         android:layout_alignRight="@id/editText"
+        android:layout_marginTop="20dp"
         >
 
         <RadioButton
@@ -122,6 +124,30 @@
             />
 
     </RadioGroup>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check1"
+        android:id="@+id/checkBox"
+        android:layout_below="@+id/radioButtonGroup"
+        android:layout_alignLeft="@+id/radioButtonGroup"
+        android:layout_alignStart="@+id/radioButtonGroup"
+        android:layout_alignRight="@+id/radioButtonGroup"
+        android:layout_alignEnd="@+id/radioButtonGroup"
+        android:layout_marginTop="10dp"/>
+
+    <CheckBox
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check2"
+        android:id="@+id/checkBox2"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignLeft="@+id/checkBox"
+        android:layout_alignStart="@+id/checkBox"
+        android:layout_alignRight="@+id/checkBox"
+        android:layout_alignEnd="@+id/checkBox" />
 
 
 </RelativeLayout>

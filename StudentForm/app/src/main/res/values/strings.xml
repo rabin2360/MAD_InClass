@@ -5,6 +5,10 @@
     <string name="toggle_off">Off String</string>
     <string name="meditate_switch">Meditate</string>
 
+    <string name="check1">Check 1</string>
+    <string name="check2">Check 2</string>
+    <string name ="check3">Check 3</string>
+
     <string-array name="studentGrades">
         <item>1</item>
         <item>2</item>

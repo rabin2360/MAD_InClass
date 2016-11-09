@@ -78,10 +78,10 @@
     <ToggleButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New ToggleButton"
+        android:text="Off Campus"
         android:id="@+id/toggleStudent"
         android:ems="8"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         android:checked="false"
         android:textOn="@string/toggle_on"
         android:textOff="@string/toggle_off"
@@ -112,21 +112,21 @@
         android:layout_below="@id/switch1"
         android:layout_alignLeft="@id/editText"
         android:layout_alignRight="@id/editText"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         >
 
         <RadioButton
             android:id="@+id/firstButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "firstOne"
+            android:text = "Republican"
             />
 
         <RadioButton
             android:id="@+id/secondButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "secondOne"
+            android:text = "Democrat"
             />
 
     </RadioGroup>
@@ -141,10 +141,10 @@
         android:layout_alignStart="@+id/radioButtonGroup"
         android:layout_alignRight="@+id/radioButtonGroup"
         android:layout_alignEnd="@+id/radioButtonGroup"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="8dp"/>
 
     <CheckBox
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/check2"
@@ -154,6 +154,26 @@
         android:layout_alignStart="@+id/checkBox"
         android:layout_alignRight="@+id/checkBox"
         android:layout_alignEnd="@+id/checkBox" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/studentNameLabel"
+        android:layout_alignStart="@+id/studentNameLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/displayLabel"
+        android:layout_below="@+id/switch1"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_above="@+id/submitButton" />
 
 
 </RelativeLayout>

@@ -3,6 +3,7 @@ package com.example.rara5776.coffee;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Spinner;
 
 public class CoffeeActivity extends AppCompatActivity {
@@ -13,6 +14,19 @@ public class CoffeeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee);
+
+        //button
+        final Button button = (Button) findViewById(R.id.submitButton);
+
+        View.OnClickListener onclick = new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                findCoffee(view);
+            }
+        };
+
+        button.setOnClickListener(onclick);
     }
 
     public void findCoffee(View view)

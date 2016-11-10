@@ -62,7 +62,7 @@
         android:layout_below="@+id/crowdType"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:onClick="findCoffee"/>
+        />
 
 
 </RelativeLayout>

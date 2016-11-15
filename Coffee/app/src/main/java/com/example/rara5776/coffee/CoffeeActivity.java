@@ -1,5 +1,6 @@
 package com.example.rara5776.coffee;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -41,5 +42,16 @@ public class CoffeeActivity extends AppCompatActivity {
 
         System.out.println(suggestedCoffeeShop);
         System.out.println(suggestedCoffeeShopURL);
+
+        //create an Intent
+        Intent intent = new Intent(this, ReceiveCoffee.class);
+
+        //using put extra
+        intent.putExtra("coffeeShopName", suggestedCoffeeShop);
+        intent.putExtra("coffeeShopURL", suggestedCoffeeShopURL);
+
+        //start intent
+        startActivity(intent);
+
     }
 }

@@ -7,4 +7,6 @@
         <item>Hipster</item>
         <item>Normal People</item>
     </string-array>
+
+    <string name="suggestedCoffee">This is your suggested coffee shop:</string>
 </resources>

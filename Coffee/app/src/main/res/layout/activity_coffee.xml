@@ -10,13 +10,13 @@
     tools:context="com.example.rara5776.coffee.CoffeeActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/title"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="1dp"
-        android:textSize="20dp"
-        android:id="@+id/label" />
+        android:textSize="30sp"
+        android:id="@+id/label"
+        android:textAlignment="center"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -24,17 +24,13 @@
         android:text="@string/choose_your_crowd"
         android:id="@+id/chooseCrowdLabel"
         android:layout_below="@+id/label"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="27dp"
-        android:textSize="15dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
         android:gravity="center"/>
 
     <Spinner
         android:entries="@array/crowdTypeVals"
-        android:gravity="center"
+        android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/crowdType"
@@ -59,10 +55,12 @@
         android:layout_height="wrap_content"
         android:text="@string/buttonName"
         android:id="@+id/submitButton"
+        android:layout_marginTop="21dp"
         android:layout_below="@+id/crowdType"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp" />
 
 
 </RelativeLayout>

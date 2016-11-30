@@ -44,6 +44,7 @@ public class ReceiveCoffee extends AppCompatActivity {
         imageButton.setOnClickListener(onclick);
     }
 
+    //implicit intent
     public void loadWebsite(View view)
     {
         Intent intent = new Intent(Intent.ACTION_VIEW);

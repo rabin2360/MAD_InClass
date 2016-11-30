@@ -15,7 +15,7 @@
         android:text="@string/title"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="1dp"
-        android:textSize="20dp"
+        android:textSize="30sp"
         android:id="@+id/label"
         android:gravity="center"/>
 
@@ -25,26 +25,22 @@
         android:text="@string/choose_your_crowd"
         android:id="@+id/chooseCrowdLabel"
         android:layout_below="@+id/label"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
-        android:textSize="20dp"
-        android:gravity="center"/>
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
 
     <Spinner
         android:entries="@array/crowdTypeVals"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/crowdType"
         android:layout_below="@+id/chooseCrowdLabel"
-        android:layout_alignLeft="@+id/chooseCrowdLabel"
-        android:layout_alignStart="@+id/chooseCrowdLabel"
         android:layout_marginTop="10dp"
-        android:layout_alignRight="@+id/chooseCrowdLabel"
-        android:layout_alignEnd="@+id/chooseCrowdLabel" />
+        android:textAlignment="center"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
 
     <ImageView
         android:layout_width="200dp"
@@ -53,17 +49,20 @@
         android:src="@drawable/coffee"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/crowdType" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/chooseCrowdLabel" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/buttonName"
         android:id="@+id/submitButton"
-        android:layout_below="@+id/crowdType"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        />
+        android:layout_below="@+id/crowdType"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
 
 
 </RelativeLayout>

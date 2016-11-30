@@ -16,6 +16,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var annotation = MKPointAnnotation()
     @IBOutlet weak var mapView: MKMapView!
     
+    //after updating the location
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let span = MKCoordinateSpanMake(0.05, 0.05) //defines the area spanned by a map region
         let region = MKCoordinateRegionMake(manager.location!.coordinate, span) //region of the map to be displayed
@@ -23,7 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         //annotations
         annotation.coordinate=manager.location!.coordinate
-        annotation.title="You are here"
+        annotation.title="Your location"
         annotation.subtitle="Latitude: \(manager.location!.coordinate.latitude), Longitude: \(manager.location!.coordinate.longitude)"
         mapView.addAnnotation(annotation)
     }

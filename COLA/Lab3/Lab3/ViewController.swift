@@ -39,6 +39,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     //firebase
     var firebaseRef : FIRDatabaseReference!
     
+    struct studentData
+    {
+        var strStudentId = "N/A"
+        var strStudentFirstname = "N/A"
+        var strStudentLastname = "N/A"
+        var strStudentDOB = "N/A"
+        var stStudentPrimaryLang = "N/A"
+        var strStudentConsentDate = "N/A"
+        var strStudentEthnicity = "N/A"
+        var strStudentGradeLevel = "N/A"
+        var strStudentLangProf = "N/A"
+        var strStudentPrimaryDisability = "N/A"
+        var strStudentPlan504 = "N/A"
+    }
+    
     @IBAction func clearFields(sender: UIButton) {
     
         studentID.text = ""
@@ -65,6 +80,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         colorReset(studentIEP)
         colorReset(student401Report)
         
+        //resetting the pickers
+        self.studentEthnicity.selectRow(0, inComponent: 0, animated: false)
+        self.studentGrade.selectRow(0, inComponent: 0, animated: false)
+        self.studentLangProf.selectRow(0, inComponent: 0, animated: false)
+
     }
     
     func colorReset(textField:UITextField)
@@ -374,6 +394,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             return
         }
         
+        //getting the student info based on ID
         ref = firebaseRef.child(studentID.text!).child("student_info")
         
         ref.observeSingleEventOfType(.Value, withBlock: {
@@ -384,7 +405,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 return
             }
             
-            print(snapshot.value!["strStudentFirstname"])
+            print(snapshot.childSnapshotForPath("strStudentFirstname").value)
+            print(snapshot.childSnapshotForPath("strStudentLastname").value)
+            print(snapshot.childSnapshotForPath("strStudentId").value)
+            print(snapshot.childSnapshotForPath("strStudentDOB").value)
+            
+            //print(snapshot.value!["strStudentFirstname"])
         })
         
     }

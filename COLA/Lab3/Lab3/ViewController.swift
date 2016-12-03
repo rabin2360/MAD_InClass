@@ -29,9 +29,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var studentGrade: UIPickerView!
     @IBOutlet weak var studentLangProf: UIPickerView!
     
-    //loading the ethnicity values
-    var ethnicities = ["None","Caucasian", "African American"]
-
     var studentEthnicityData : [String] = [String]()
     var studentGradeData : [String] = [String]()
     var studentLangProfData : [String] = [String]()
@@ -39,24 +36,39 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     //firebase
     var firebaseRef : FIRDatabaseReference!
     
-    struct studentData
+    //reference to constants class
+    var constantData : Constants!
+    
+    struct studentInfo
     {
         var strStudentId = "N/A"
         var strStudentFirstname = "N/A"
         var strStudentLastname = "N/A"
         var strStudentDOB = "N/A"
-        var stStudentPrimaryLang = "N/A"
+        var strStudentPrimaryLang = "N/A"
         var strStudentConsentDate = "N/A"
-        var strStudentEthnicity = "N/A"
+        var strStudentEthinicity = "N/A"
         var strStudentGradeLevel = "N/A"
-        var strStudentLangProf = "N/A"
+        var strStudentLangProficiency = "N/A"
         var strStudentPrimaryDisability = "N/A"
         var strStudentPlan504 = "N/A"
     }
     
-    @IBAction func clearFields(sender: UIButton) {
+    var studentData : studentInfo!
     
-        studentID.text = ""
+    @IBAction func clearFields(sender: UIButton) {
+
+        clearFunction("buttonPress")
+
+    }
+    
+    func clearFunction(clearType: String)
+    {
+        
+        if(clearType == "buttonPress")
+        {
+            studentID.text = ""
+        }
         studentFirstname.text = ""
         studentLastname.text = ""
         studentDOB.text = ""
@@ -84,18 +96,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.studentEthnicity.selectRow(0, inComponent: 0, animated: false)
         self.studentGrade.selectRow(0, inComponent: 0, animated: false)
         self.studentLangProf.selectRow(0, inComponent: 0, animated: false)
-
+    
     }
     
     func colorReset(textField:UITextField)
     {
         //resetting the color
+        print("Setting stuff white")
         textField.layer.borderWidth = 0
         textField.layer.borderColor = UIColor.whiteColor().CGColor
     }
     
     func setBorderRed(textField: UITextField)
     {
+        print("Setting stuff red")
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.redColor().CGColor
     }
@@ -324,12 +338,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.studentLangProf.delegate = self
         self.studentLangProf.delegate = self
         
-        studentEthnicityData = ["Caucasian", "African American", "Other"]
-        studentGradeData = ["Pre-K", "K", "1","2", "12"]
-        studentLangProfData = ["Proficient", "Not Proficient"]
+        studentEthnicityData = ["Select Ethnicity", "White", "African American", "Asian", "Other"]
+        studentGradeData = ["Select Grade","Pre-K", "K", "1","2", "12"]
+        studentLangProfData = ["Select Proficiency","Proficient", "Not Proficient"]
         
         //firebase 
         firebaseRef = FIRDatabase.database().referenceFromURL("https://cola-73f9f.firebaseio.com/")
+        
+        //loading constants class
+        constantData = Constants()
+        studentData = studentInfo()
     }
 
     override func didReceiveMemoryWarning() {
@@ -391,7 +409,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if let text = studentID.text where text.isEmpty
         {
             print("ERROR: Student Id field is empty")
+            self.clearFunction("StudentId")
+            setBorderRed(studentID)
             return
+        }
+        else
+        {
+            colorReset(studentID)
         }
         
         //getting the student info based on ID
@@ -401,20 +425,63 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         snapshot in
             if !snapshot.exists()
             {
+                self.clearFunction("StudentId")
                 print("ERROR: Student Id doesn't exist")
                 return
             }
             
-            print(snapshot.childSnapshotForPath("strStudentFirstname").value)
-            print(snapshot.childSnapshotForPath("strStudentLastname").value)
-            print(snapshot.childSnapshotForPath("strStudentId").value)
-            print(snapshot.childSnapshotForPath("strStudentDOB").value)
+            self.studentData.strStudentId = snapshot.childSnapshotForPath("strStudentId").value! as! String
+            self.studentData.strStudentFirstname = snapshot.childSnapshotForPath("strStudentFirstname").value! as! String
+            self.studentData.strStudentLastname = snapshot.childSnapshotForPath("strStudentLastname").value! as! String
+            self.studentData.strStudentDOB = snapshot.childSnapshotForPath("strStudentDOB").value! as! String
+            self.studentData.strStudentPrimaryLang = snapshot.childSnapshotForPath("strStudentPrimaryLang").value! as! String
+            self.studentData.strStudentConsentDate = snapshot.childSnapshotForPath("strStudentConsentDate").value! as! String
+            self.studentData.strStudentEthinicity = snapshot.childSnapshotForPath("strStudentEthinicity").value! as! String
+            self.studentData.strStudentGradeLevel = snapshot.childSnapshotForPath("strStudentGradeLevel").value! as! String
+            self.studentData.strStudentLangProficiency = snapshot.childSnapshotForPath("strStudentLangProficiency").value! as! String
+            self.studentData.strStudentPrimaryDisability = snapshot.childSnapshotForPath("strStudentPrimaryDisability").value! as! String
+            self.studentData.strStudentPlan504 = snapshot.childSnapshotForPath("strStudentPlan504").value! as! String
             
-            //print(snapshot.value!["strStudentFirstname"])
+            //printing for debugging
+            print(self.studentData)
+            self.populateFormFields()
+            self.setPickerView(self.studentData.strStudentEthinicity, picker: self.studentEthnicity, array: self.studentEthnicityData)
+            self.setPickerView(self.studentData.strStudentGradeLevel, picker: self.studentGrade, array: self.studentGradeData)
+            self.setPickerView(self.studentData.strStudentLangProficiency, picker: self.studentLangProf, array: self.studentLangProfData)
+            //function to fill out all the fields
         })
         
     }
+    
+    func setPickerView(inputString: String, picker: UIPickerView, array: [String])
+    {
+        let index = array.indexOf(inputString)
+        picker.selectRow(index!, inComponent: 0, animated: false)
+    }
 
+    func populateFormFields()
+    {
+        studentFirstname.text = self.studentData.strStudentFirstname
+        studentLastname.text = self.studentData.strStudentLastname
+        studentDOB.text = self.studentData.strStudentDOB
+        studentPrimaryLang.text = self.studentData.strStudentPrimaryLang
+        studentConsentDate.text = self.studentData.strStudentConsentDate
+        //studentEthnicity.set
+        
+        if(!self.studentData.strStudentPrimaryDisability.isEmpty || self.studentData.strStudentPrimaryDisability != "N/A")
+        {
+            studentIEP.text = self.studentData.strStudentPrimaryDisability
+            studentIEPSwitch.setOn(true, animated: true)
+        }
+        
+        if(!self.studentData.strStudentPlan504.isEmpty || self.studentData.strStudentPlan504 != "N/A")
+        {
+            student401Report.text = self.studentData.strStudentPlan504
+            student401Switch.setOn(true, animated: true)
+        }
+        
+    }
+    
     //when tapped anywhere outside the textboxes or the pickers
     //screen is dismissed
     @IBAction func ScreenTapped(sender: AnyObject) {

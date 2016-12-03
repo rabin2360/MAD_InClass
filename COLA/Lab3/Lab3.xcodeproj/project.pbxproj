@@ -13,7 +13,7 @@
 		86123C8F1D95CCF600DB98F8 /* Lab3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86123C8D1D95CCF600DB98F8 /* Lab3.xcdatamodeld */; };
 		86123C911D95CCF600DB98F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86123C901D95CCF600DB98F8 /* Assets.xcassets */; };
 		86123C941D95CCF600DB98F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86123C921D95CCF600DB98F8 /* LaunchScreen.storyboard */; };
-		866CC7871DEE83B100282322 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CC7861DEE83B100282322 /* DatabaseHandler.swift */; };
+		861917851DF23553001CE91D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861917841DF23553001CE91D /* Constants.swift */; };
 		866CC7891DEE8C3E00282322 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 866CC7881DEE8C3E00282322 /* GoogleService-Info.plist */; };
 		92162C23A3B76E675D93E81C /* Pods_Lab3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787A34DBCD8E6E5D5673B534 /* Pods_Lab3.framework */; };
 /* End PBXBuildFile section */
@@ -29,7 +29,7 @@
 		86123C901D95CCF600DB98F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86123C931D95CCF600DB98F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86123C951D95CCF600DB98F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		866CC7861DEE83B100282322 /* DatabaseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
+		861917841DF23553001CE91D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		866CC7881DEE8C3E00282322 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C4369FF90F3BDD1B1A64E64A /* Pods-Lab3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lab3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lab3/Pods-Lab3.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,13 +78,13 @@
 			children = (
 				86123C861D95CCF600DB98F8 /* AppDelegate.swift */,
 				86123C881D95CCF600DB98F8 /* ViewController.swift */,
+				861917841DF23553001CE91D /* Constants.swift */,
 				86123C8A1D95CCF600DB98F8 /* Main.storyboard */,
 				86123C901D95CCF600DB98F8 /* Assets.xcassets */,
 				86123C921D95CCF600DB98F8 /* LaunchScreen.storyboard */,
 				86123C951D95CCF600DB98F8 /* Info.plist */,
 				866CC7881DEE8C3E00282322 /* GoogleService-Info.plist */,
 				86123C8D1D95CCF600DB98F8 /* Lab3.xcdatamodeld */,
-				866CC7861DEE83B100282322 /* DatabaseHandler.swift */,
 			);
 			path = Lab3;
 			sourceTree = "<group>";
@@ -224,7 +224,7 @@
 				86123C891D95CCF600DB98F8 /* ViewController.swift in Sources */,
 				86123C871D95CCF600DB98F8 /* AppDelegate.swift in Sources */,
 				86123C8F1D95CCF600DB98F8 /* Lab3.xcdatamodeld in Sources */,
-				866CC7871DEE83B100282322 /* DatabaseHandler.swift in Sources */,
+				861917851DF23553001CE91D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

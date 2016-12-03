@@ -72,7 +72,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         studentFirstname.text = ""
         studentLastname.text = ""
         studentDOB.text = ""
+        
         studentConsentDate.text = ""
+        studentConsentDate.enabled = true
+        
         studentIEP.text = ""
         student401Report.text = ""
         studentPrimaryLang.text = ""
@@ -216,6 +219,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if validateFields()
         {
             print("Valid Form!")
+            
+            //save to firebase here!
         }
         else
         {
@@ -348,6 +353,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         //loading constants class
         constantData = Constants()
         studentData = studentInfo()
+        
+        //clear all the fields
+        clearFunction("buttonPress")
     }
 
     override func didReceiveMemoryWarning() {
@@ -465,19 +473,32 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         studentLastname.text = self.studentData.strStudentLastname
         studentDOB.text = self.studentData.strStudentDOB
         studentPrimaryLang.text = self.studentData.strStudentPrimaryLang
-        studentConsentDate.text = self.studentData.strStudentConsentDate
-        //studentEthnicity.set
+        
+        if(self.studentData.strStudentConsentDate != "N/A")
+        {
+            studentConsentDate.text = self.studentData.strStudentConsentDate
+            studentConsentDate.enabled = true
+        }
+        else
+        {
+            studentConsentDateSwitch.setOn(true, animated: true)
+            studentConsentDate.text = "N/A"
+            studentConsentDate.enabled = false
+        }
         
         if(!self.studentData.strStudentPrimaryDisability.isEmpty || self.studentData.strStudentPrimaryDisability != "N/A")
         {
             studentIEP.text = self.studentData.strStudentPrimaryDisability
+            studentIEP.enabled = true
             studentIEPSwitch.setOn(true, animated: true)
+            
         }
         
         if(!self.studentData.strStudentPlan504.isEmpty || self.studentData.strStudentPlan504 != "N/A")
         {
             student401Report.text = self.studentData.strStudentPlan504
             student401Switch.setOn(true, animated: true)
+            student401Report.enabled = true
         }
         
     }

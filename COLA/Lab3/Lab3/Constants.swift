@@ -11,7 +11,7 @@ import Foundation
 class Constants
 {
 
-    let ID = "strStudentID"
+    let ID = "strStudentId"
     let FIRSTNAME = "strStudentFirstname"
     let LASTNAME = "strStudentLastname"
     let DOB = "strStudentDOB"

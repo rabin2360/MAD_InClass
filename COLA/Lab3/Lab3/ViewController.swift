@@ -56,13 +56,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var studentData : studentInfo!
     
-    @IBAction func clearFields(sender: UIButton) {
+    @IBAction func clearFields(_ sender: UIButton) {
 
         clearFunction("buttonPress")
 
     }
     
-    func clearFunction(clearType: String)
+    func clearFunction(_ clearType: String)
     {
         
         if(clearType == "buttonPress")
@@ -74,7 +74,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         studentDOB.text = ""
         
         studentConsentDate.text = ""
-        studentConsentDate.enabled = true
+        studentConsentDate.isEnabled = true
         
         studentIEP.text = ""
         student401Report.text = ""
@@ -102,38 +102,38 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     }
     
-    func colorReset(textField:UITextField)
+    func colorReset(_ textField:UITextField)
     {
         //resetting the color
         textField.layer.borderWidth = 0
-        textField.layer.borderColor = UIColor.whiteColor().CGColor
+        textField.layer.borderColor = UIColor.white.cgColor
     }
     
-    func setBorderRed(textField: UITextField)
+    func setBorderRed(_ textField: UITextField)
     {
         textField.layer.borderWidth = 1
-        textField.layer.borderColor = UIColor.redColor().CGColor
+        textField.layer.borderColor = UIColor.red.cgColor
     }
     
-    @IBAction func cancelApplication(sender: AnyObject) {
+    @IBAction func cancelApplication(_ sender: AnyObject) {
     
         //create UIAlertController object
-        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to exit? Unsaved info will be lost!", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to exit? Unsaved info will be lost!", preferredStyle: UIAlertControllerStyle.alert)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
         
         alert.addAction(cancelAction)
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:
             {
                 action in
                 //exit the application if okay pressed
-                UIControl().sendAction(#selector(NSURLSessionTask.suspend), to: UIApplication.sharedApplication(), forEvent: nil)
+                UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
 
         })
         
         alert.addAction(okAction)
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     func validateFields() -> Bool
@@ -172,7 +172,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
         
         
-        if(studentIEPSwitch.on)
+        if(studentIEPSwitch.isOn)
         {
             if(!validateUIText(studentIEP))
             {
@@ -180,7 +180,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
         
-        if(student401Switch.on)
+        if(student401Switch.isOn)
         {
             if(!validateUIText(student401Report))
             {
@@ -189,17 +189,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
         }
         
-        if(studentConsentDateSwitch.on)
+        if(studentConsentDateSwitch.isOn)
         {
             studentConsentDate.text = "N/A"
-            studentConsentDate.enabled = false
+            studentConsentDate.isEnabled = false
         }
         
         return validStatus
     
     }
     
-    func validateUIText(inputUIText: UITextField)->Bool
+    func validateUIText(_ inputUIText: UITextField)->Bool
     {
         var validStatus = true
         
@@ -212,7 +212,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return validStatus
     }
     
-    @IBAction func okPressed(sender: UIButton) {
+    @IBAction func okPressed(_ sender: UIButton) {
         
         if validateFields()
         {
@@ -226,7 +226,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             self.studentData.strStudentPrimaryLang = studentPrimaryLang.text!
             self.studentData.strStudentConsentDate = studentConsentDate.text!
             
-            if(studentIEPSwitch.on)
+            if(studentIEPSwitch.isOn)
             {
                 self.studentData.strStudentPrimaryDisability = studentIEP.text!
             }
@@ -235,7 +235,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.studentData.strStudentPrimaryDisability = "N/A"
             }
             
-            if(student401Switch.on)
+            if(student401Switch.isOn)
             {
                 self.studentData.strStudentPlan504 = student401Report.text!
             }
@@ -272,16 +272,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    func datePickerFormat_YYYY_MM_DD(sender: UIDatePicker) -> String
+    func datePickerFormat_YYYY_MM_DD(_ sender: UIDatePicker) -> String
     {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
 
-        let date = dateFormatter.stringFromDate(sender.date)
-        var dateArray = date.componentsSeparatedByString("-")
+        let date = dateFormatter.string(from: sender.date)
+        var dateArray = date.components(separatedBy: "-")
         
         let selectedDate = dateArray[0]
-        var mm_dd_yy_array = selectedDate.componentsSeparatedByString("/")
+        var mm_dd_yy_array = selectedDate.components(separatedBy: "/")
         let day_int:Int? = Int(mm_dd_yy_array[1])
         let month_int:Int? = Int(mm_dd_yy_array[0])
         let day = String(format: "%02d", day_int!)
@@ -294,97 +294,111 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         print("date array \(mm_dd_yy_array)")
         */
         
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        let yearStr = dateFormatter.stringFromDate(sender.date)
-        var yearStrArray = yearStr.componentsSeparatedByString(" ,")
-        var yearDataArray = yearStrArray[0].componentsSeparatedByString(",")
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        let yearStr = dateFormatter.string(from: sender.date)
+        var yearStrArray = yearStr.components(separatedBy: " ,")
+        var yearDataArray = yearStrArray[0].components(separatedBy: ",")
         print("year date \(yearStrArray)")
         
         return yearDataArray[1]+"/"+month+"/"+day
     }
     
-    func datePickerValueChanged(sender: UIDatePicker)
+    func datePickerValueChanged(_ sender: UIDatePicker)
     {
         studentDOB.text = ""
         studentDOB.text = datePickerFormat_YYYY_MM_DD(sender)
     }
     
-    @IBAction func enterDOB(sender: UITextField) {
+    @IBAction func enterDOB(_ sender: UITextField) {
         studentDOB.text = ""
         let datePickerView:UIDatePicker = UIDatePicker()
-        datePickerView.datePickerMode = UIDatePickerMode.Date
+        datePickerView.datePickerMode = UIDatePickerMode.date
         sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(ViewController.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.addTarget(self, action: #selector(ViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
         
     }
     
-    func consentDateValueChanged(sender: UIDatePicker)
+    func consentDateValueChanged(_ sender: UIDatePicker)
     {
         studentConsentDate.text = ""
         studentConsentDate.text = datePickerFormat_YYYY_MM_DD(sender)
     }
     
-    @IBAction func enterConsent(sender: UITextField) {
+    @IBAction func enterConsent(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
-        datePickerView.datePickerMode = UIDatePickerMode.Date
+        datePickerView.datePickerMode = UIDatePickerMode.date
         sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(ViewController.consentDateValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.addTarget(self, action: #selector(ViewController.consentDateValueChanged), for: UIControlEvents.valueChanged)
         
     }
 
-    @IBAction func consentDateSwitchClicked(sender: UISwitch) {
+    @IBAction func consentDateSwitchClicked(_ sender: UISwitch) {
         
-        if studentConsentDateSwitch.on
+        if studentConsentDateSwitch.isOn
         {
-            studentConsentDate.enabled = false
+            studentConsentDate.isEnabled = false
             studentConsentDate.text = "N/A"
             colorReset(studentConsentDate)
 
         }
         else
         {
-            studentConsentDate.enabled = true
+            studentConsentDate.isEnabled = true
             studentConsentDate.text = ""
         }
     }
     
-    @IBAction func IEPSwitchClicked(sender: UISwitch) {
+    @IBAction func IEPSwitchClicked(_ sender: UISwitch) {
     
         switchClicked(sender, textField: studentIEP)
 
     }
 
-    @IBAction func SwitchClicked(sender: UISwitch) {
+    @IBAction func SwitchClicked(_ sender: UISwitch) {
       
         switchClicked(sender, textField: student401Report)
 
     }
     
-    func switchClicked(senderSwitch: UISwitch, textField: UITextField)
+    func switchClicked(_ senderSwitch: UISwitch, textField: UITextField)
     {
-        if(senderSwitch.on)
+        if(senderSwitch.isOn)
         {
-            textField.enabled = true
+            textField.isEnabled = true
         }
         else
         {
-            textField.enabled = false
+            textField.isEnabled = false
             textField.text = ""
             colorReset(textField)
         }
     }
     
-    func enableDisableTextFields(senderSwitch: UISwitch, textField: UITextField)
+    func enableDisableTextFields(_ senderSwitch: UISwitch, textField: UITextField)
     {
-        if(senderSwitch.on)
+        if(senderSwitch.isOn)
         {
-            textField.enabled = true
+            textField.isEnabled = true
         }
         else
         {
-            textField.enabled = false
+            textField.isEnabled = false
         }
+    }
+    
+    func UIColorFromHex(_ rgbValue:UInt32, alpha:Double=1.0)->UIColor {
+        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
+        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
+        let blue = CGFloat(rgbValue & 0xFF)/256.0
+        
+        return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
+    }
+    
+    func setSwitchToWhite(_ switchButton: UISwitch)
+    {
+        switchButton.backgroundColor = UIColor.white
+        switchButton.layer.cornerRadius = 16.0
     }
     
     override func viewDidLoad() {
@@ -392,9 +406,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         // Do any additional setup after loading the view, typically from a nib.
         
         //setting the title of the page to bold
-        studentPageLabel.font = UIFont.boldSystemFontOfSize(17)
+        studentPageLabel.font = UIFont.boldSystemFont(ofSize: 17)
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "COLA_background.png")!)
+        //setting the app color themes
+        self.view.backgroundColor = UIColorFromHex(0xEFECCA)
+        setSwitchToWhite(studentConsentDateSwitch)
+        setSwitchToWhite(studentIEPSwitch)
+        setSwitchToWhite(student401Switch)
+        
+        studentLangProf.backgroundColor = UIColor.white
+        studentEthnicity.backgroundColor = UIColor.white
+        studentGrade.backgroundColor = UIColor.white
         
         //reading the switches to determine the enabled states of the text fields
         enableDisableTextFields(studentIEPSwitch, textField: studentIEP)
@@ -421,7 +443,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         studentLangProfData = ["Select Proficiency","Proficient", "Not Proficient"]
         
         //firebase 
-        firebaseRef = FIRDatabase.database().referenceFromURL("https://cola-73f9f.firebaseio.com/")
+        firebaseRef = FIRDatabase.database().reference(fromURL: "https://cola-73f9f.firebaseio.com/")
         
         //loading constants class
         constantData = Constants()
@@ -436,11 +458,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         // Dispose of any resources that can be recreated.
     }
 
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         if(pickerView == studentEthnicity)
         {
@@ -458,7 +480,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return 0
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         //studentEthnicity.text = ethnicities[row]
         if(pickerView == studentEthnicity)
@@ -477,7 +499,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if(pickerView == studentEthnicity)
         {
@@ -496,11 +518,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     //TODO: Continue working on this...
-    @IBAction func findButtonPressed(sender: UIButton) {
+    @IBAction func findButtonPressed(_ sender: UIButton) {
         var ref: FIRDatabaseReference!
         
         //check if student id is emtpy
-        if let text = studentID.text where text.isEmpty
+        if let text = studentID.text, text.isEmpty
         {
             print("ERROR: Student Id field is empty")
             showAlert("Student ID Needed!", message: "Please enter the student Id.", dismissMsg: "OK")
@@ -516,7 +538,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         //getting the student info based on ID
         ref = firebaseRef.child(studentID.text!).child("student_info")
         
-        ref.observeSingleEventOfType(.Value, withBlock: {
+        ref.observeSingleEvent(of: .value, with: {
         snapshot in
             if !snapshot.exists()
             {
@@ -526,17 +548,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 return
             }
             
-            self.studentData.strStudentId = snapshot.childSnapshotForPath("strStudentId").value! as! String
-            self.studentData.strStudentFirstname = snapshot.childSnapshotForPath("strStudentFirstname").value! as! String
-            self.studentData.strStudentLastname = snapshot.childSnapshotForPath("strStudentLastname").value! as! String
-            self.studentData.strStudentDOB = snapshot.childSnapshotForPath("strStudentDOB").value! as! String
-            self.studentData.strStudentPrimaryLang = snapshot.childSnapshotForPath("strStudentPrimaryLang").value! as! String
-            self.studentData.strStudentConsentDate = snapshot.childSnapshotForPath("strStudentConsentDate").value! as! String
-            self.studentData.strStudentEthinicity = snapshot.childSnapshotForPath("strStudentEthinicity").value! as! String
-            self.studentData.strStudentGradeLevel = snapshot.childSnapshotForPath("strStudentGradeLevel").value! as! String
-            self.studentData.strStudentLangProficiency = snapshot.childSnapshotForPath("strStudentLangProficiency").value! as! String
-            self.studentData.strStudentPrimaryDisability = snapshot.childSnapshotForPath("strStudentPrimaryDisability").value! as! String
-            self.studentData.strStudentPlan504 = snapshot.childSnapshotForPath("strStudentPlan504").value! as! String
+            self.studentData.strStudentId = snapshot.childSnapshot(forPath: "strStudentId").value! as! String
+            self.studentData.strStudentFirstname = snapshot.childSnapshot(forPath: "strStudentFirstname").value! as! String
+            self.studentData.strStudentLastname = snapshot.childSnapshot(forPath: "strStudentLastname").value! as! String
+            self.studentData.strStudentDOB = snapshot.childSnapshot(forPath: "strStudentDOB").value! as! String
+            self.studentData.strStudentPrimaryLang = snapshot.childSnapshot(forPath: "strStudentPrimaryLang").value! as! String
+            self.studentData.strStudentConsentDate = snapshot.childSnapshot(forPath: "strStudentConsentDate").value! as! String
+            self.studentData.strStudentEthinicity = snapshot.childSnapshot(forPath: "strStudentEthinicity").value! as! String
+            self.studentData.strStudentGradeLevel = snapshot.childSnapshot(forPath: "strStudentGradeLevel").value! as! String
+            self.studentData.strStudentLangProficiency = snapshot.childSnapshot(forPath: "strStudentLangProficiency").value! as! String
+            self.studentData.strStudentPrimaryDisability = snapshot.childSnapshot(forPath: "strStudentPrimaryDisability").value! as! String
+            self.studentData.strStudentPlan504 = snapshot.childSnapshot(forPath: "strStudentPlan504").value! as! String
             
             //printing for debugging
             print(self.studentData)
@@ -549,9 +571,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
-    func setPickerView(inputString: String, picker: UIPickerView, array: [String])
+    func setPickerView(_ inputString: String, picker: UIPickerView, array: [String])
     {
-        let index = array.indexOf(inputString)
+        let index = array.index(of: inputString)
         if(index != nil)
         {
             picker.selectRow(index!, inComponent: 0, animated: false)
@@ -572,19 +594,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if(self.studentData.strStudentConsentDate != "N/A")
         {
             studentConsentDate.text = self.studentData.strStudentConsentDate
-            studentConsentDate.enabled = true
+            studentConsentDate.isEnabled = true
         }
         else
         {
             studentConsentDateSwitch.setOn(true, animated: true)
             studentConsentDate.text = "N/A"
-            studentConsentDate.enabled = false
+            studentConsentDate.isEnabled = false
         }
         
         if(!self.studentData.strStudentPrimaryDisability.isEmpty || self.studentData.strStudentPrimaryDisability != "N/A")
         {
             studentIEP.text = self.studentData.strStudentPrimaryDisability
-            studentIEP.enabled = true
+            studentIEP.isEnabled = true
             studentIEPSwitch.setOn(true, animated: true)
             
         }
@@ -593,23 +615,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         {
             student401Report.text = self.studentData.strStudentPlan504
             student401Switch.setOn(true, animated: true)
-            student401Report.enabled = true
+            student401Report.isEnabled = true
         }
         
     }
     
-    func showAlert(title:String, message:String, dismissMsg:String)
+    func showAlert(_ title:String, message:String, dismissMsg:String)
     {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction(title: dismissMsg, style: .Default, handler: nil))
+        alertController.addAction(UIAlertAction(title: dismissMsg, style: .default, handler: nil))
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     //when tapped anywhere outside the textboxes or the pickers
     //screen is dismissed
-    @IBAction func ScreenTapped(sender: AnyObject) {
+    @IBAction func ScreenTapped(_ sender: AnyObject) {
         
         if studentID != nil
         {
@@ -637,7 +659,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     //this will listen to all the text fields and then resign the control to keyboard when 'DONE' is tapped
-    @IBAction func textFieldDoneEditing(sender: UITextField)
+    @IBAction func textFieldDoneEditing(_ sender: UITextField)
     {
         sender.resignFirstResponder()
     }

@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		0786225B6BD557F392089B1D /* Pods-Lab3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lab3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lab3/Pods-Lab3.debug.xcconfig"; sourceTree = "<group>"; };
 		787A34DBCD8E6E5D5673B534 /* Pods_Lab3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lab3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		86123C831D95CCF600DB98F8 /* Lab3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86123C831D95CCF600DB98F8 /* COLA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COLA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86123C861D95CCF600DB98F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86123C881D95CCF600DB98F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		86123C8B1D95CCF600DB98F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		86123C841D95CCF600DB98F8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86123C831D95CCF600DB98F8 /* Lab3.app */,
+				86123C831D95CCF600DB98F8 /* COLA.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,9 +100,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		86123C821D95CCF600DB98F8 /* Lab3 */ = {
+		86123C821D95CCF600DB98F8 /* COLA */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86123C981D95CCF600DB98F8 /* Build configuration list for PBXNativeTarget "Lab3" */;
+			buildConfigurationList = 86123C981D95CCF600DB98F8 /* Build configuration list for PBXNativeTarget "COLA" */;
 			buildPhases = (
 				2B4AF0A62FE97F923E99CB7E /* [CP] Check Pods Manifest.lock */,
 				86123C7F1D95CCF600DB98F8 /* Sources */,
@@ -115,9 +115,9 @@
 			);
 			dependencies = (
 			);
-			name = Lab3;
+			name = COLA;
 			productName = Lab3;
-			productReference = 86123C831D95CCF600DB98F8 /* Lab3.app */;
+			productReference = 86123C831D95CCF600DB98F8 /* COLA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -133,10 +133,11 @@
 					86123C821D95CCF600DB98F8 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 46Y66KGEW3;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
-			buildConfigurationList = 86123C7E1D95CCF600DB98F8 /* Build configuration list for PBXProject "Lab3" */;
+			buildConfigurationList = 86123C7E1D95CCF600DB98F8 /* Build configuration list for PBXProject "COLA" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -149,7 +150,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				86123C821D95CCF600DB98F8 /* Lab3 */,
+				86123C821D95CCF600DB98F8 /* COLA */,
 			);
 		};
 /* End PBXProject section */
@@ -344,6 +345,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RR.Lab3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -356,13 +358,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RR.Lab3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		86123C7E1D95CCF600DB98F8 /* Build configuration list for PBXProject "Lab3" */ = {
+		86123C7E1D95CCF600DB98F8 /* Build configuration list for PBXProject "COLA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86123C961D95CCF600DB98F8 /* Debug */,
@@ -371,7 +374,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86123C981D95CCF600DB98F8 /* Build configuration list for PBXNativeTarget "Lab3" */ = {
+		86123C981D95CCF600DB98F8 /* Build configuration list for PBXNativeTarget "COLA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86123C991D95CCF600DB98F8 /* Debug */,

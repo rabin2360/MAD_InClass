@@ -39,6 +39,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     //reference to constants class
     var constantData : Constants!
     
+    var studentFormUtil: StudentUtil!
+    
     struct studentInfo
     {
         var strStudentId = "N/A"
@@ -86,14 +88,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         studentConsentDateSwitch.setOn(false, animated: true)
         
         //resetting the color of the text boxes too
-        colorReset(studentID)
-        colorReset(studentFirstname)
-        colorReset(studentLastname)
-        colorReset(studentDOB)
-        colorReset(studentPrimaryLang)
-        colorReset(studentConsentDate)
-        colorReset(studentIEP)
-        colorReset(student401Report)
+        studentFormUtil.utilColorReset(studentID)
+        studentFormUtil.utilColorReset(studentFirstname)
+        studentFormUtil.utilColorReset(studentLastname)
+        studentFormUtil.utilColorReset(studentDOB)
+        studentFormUtil.utilColorReset(studentPrimaryLang)
+        studentFormUtil.utilColorReset(studentConsentDate)
+        studentFormUtil.utilColorReset(studentIEP)
+        studentFormUtil.utilColorReset(student401Report)
         
         //resetting the pickers
         self.studentEthnicity.selectRow(0, inComponent: 0, animated: false)
@@ -102,18 +104,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     }
     
-    func colorReset(_ textField:UITextField)
-    {
-        //resetting the color
-        textField.layer.borderWidth = 0
-        textField.layer.borderColor = UIColor.white.cgColor
-    }
-    
-    func setBorderRed(_ textField: UITextField)
-    {
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = UIColor.red.cgColor
-    }
     
     @IBAction func cancelApplication(_ sender: AnyObject) {
     
@@ -138,34 +128,35 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func validateFields() -> Bool
     {
+        
         var validStatus = true
 
-        if(!validateUIText(studentID))
+        if(!studentFormUtil.utilValidateUIText(studentID))
         {
             validStatus = false
         }
         
-        if(!validateUIText(studentFirstname))
+        if(!studentFormUtil.utilValidateUIText(studentFirstname))
         {
             validStatus = false
         }
         
-        if(!validateUIText(studentLastname))
+        if(!studentFormUtil.utilValidateUIText(studentLastname))
         {
             validStatus = false
         }
         
-        if(!validateUIText(studentDOB))
+        if(!studentFormUtil.utilValidateUIText(studentDOB))
         {
             validStatus = false
         }
         
-        if(!validateUIText(studentPrimaryLang))
+        if(!studentFormUtil.utilValidateUIText(studentPrimaryLang))
         {
             validStatus = false
         }
      
-        if(!validateUIText(studentConsentDate))
+        if(!studentFormUtil.utilValidateUIText(studentConsentDate))
         {
             validStatus = false
         }
@@ -174,7 +165,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         if(studentIEPSwitch.isOn)
         {
-            if(!validateUIText(studentIEP))
+            if(!studentFormUtil.utilValidateUIText(studentIEP))
             {
                 validStatus = false
             }
@@ -182,7 +173,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         if(student401Switch.isOn)
         {
-            if(!validateUIText(student401Report))
+            if(!studentFormUtil.utilValidateUIText(student401Report))
             {
                 validStatus = false
             }
@@ -197,19 +188,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         return validStatus
     
-    }
-    
-    func validateUIText(_ inputUIText: UITextField)->Bool
-    {
-        var validStatus = true
-        
-        if(inputUIText.text == "")
-        {
-            setBorderRed(inputUIText)
-            validStatus = false
-        }
-        
-        return validStatus
     }
     
     @IBAction func okPressed(_ sender: UIButton) {
@@ -272,41 +250,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    func datePickerFormat_YYYY_MM_DD(_ sender: UIDatePicker) -> String
-    {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-
-        let date = dateFormatter.string(from: sender.date)
-        var dateArray = date.components(separatedBy: "-")
-        
-        let selectedDate = dateArray[0]
-        var mm_dd_yy_array = selectedDate.components(separatedBy: "/")
-        let day_int:Int? = Int(mm_dd_yy_array[1])
-        let month_int:Int? = Int(mm_dd_yy_array[0])
-        let day = String(format: "%02d", day_int!)
-        let month = String(format: "%02d", month_int!)
-
-        /*DEBUG
-        print("day \(day)")
-        print("month \(month)")
-        print("date array \(dateArray)")
-        print("date array \(mm_dd_yy_array)")
-        */
-        
-        dateFormatter.dateStyle = DateFormatter.Style.medium
-        let yearStr = dateFormatter.string(from: sender.date)
-        var yearStrArray = yearStr.components(separatedBy: " ,")
-        var yearDataArray = yearStrArray[0].components(separatedBy: ",")
-        print("year date \(yearStrArray)")
-        
-        return yearDataArray[1]+"/"+month+"/"+day
-    }
-    
     func datePickerValueChanged(_ sender: UIDatePicker)
     {
         studentDOB.text = ""
-        studentDOB.text = datePickerFormat_YYYY_MM_DD(sender)
+        studentDOB.text = studentFormUtil.utilDatePickerFormat_YYYY_MM_DD(sender)
     }
     
     @IBAction func enterDOB(_ sender: UITextField) {
@@ -321,7 +268,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func consentDateValueChanged(_ sender: UIDatePicker)
     {
         studentConsentDate.text = ""
-        studentConsentDate.text = datePickerFormat_YYYY_MM_DD(sender)
+        studentConsentDate.text = studentFormUtil.utilDatePickerFormat_YYYY_MM_DD(sender)
     }
     
     @IBAction func enterConsent(_ sender: UITextField) {
@@ -339,7 +286,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         {
             studentConsentDate.isEnabled = false
             studentConsentDate.text = "N/A"
-            colorReset(studentConsentDate)
+            studentFormUtil.utilColorReset(studentConsentDate)
 
         }
         else
@@ -371,57 +318,35 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         {
             textField.isEnabled = false
             textField.text = ""
-            colorReset(textField)
+            studentFormUtil.utilColorReset(textField)
         }
-    }
-    
-    func enableDisableTextFields(_ senderSwitch: UISwitch, textField: UITextField)
-    {
-        if(senderSwitch.isOn)
-        {
-            textField.isEnabled = true
-        }
-        else
-        {
-            textField.isEnabled = false
-        }
-    }
-    
-    func UIColorFromHex(_ rgbValue:UInt32, alpha:Double=1.0)->UIColor {
-        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
-        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
-        let blue = CGFloat(rgbValue & 0xFF)/256.0
-        
-        return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
-    }
-    
-    func setSwitchToWhite(_ switchButton: UISwitch)
-    {
-        switchButton.backgroundColor = UIColor.white
-        switchButton.layer.cornerRadius = 16.0
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+        //init util function class
+        studentFormUtil = StudentUtil()
+        
         //setting the title of the page to bold
         studentPageLabel.font = UIFont.boldSystemFont(ofSize: 17)
         
         //setting the app color themes
-        self.view.backgroundColor = UIColorFromHex(0xEFECCA)
-        setSwitchToWhite(studentConsentDateSwitch)
-        setSwitchToWhite(studentIEPSwitch)
-        setSwitchToWhite(student401Switch)
+        self.view.backgroundColor = studentFormUtil.utilUIColorFromHex(0xEFECCA)
+        studentFormUtil.utilSetSwitchToWhite(studentConsentDateSwitch)
+        studentFormUtil.utilSetSwitchToWhite(studentIEPSwitch)
+        studentFormUtil.utilSetSwitchToWhite(student401Switch)
         
         studentLangProf.backgroundColor = UIColor.white
         studentEthnicity.backgroundColor = UIColor.white
         studentGrade.backgroundColor = UIColor.white
         
         //reading the switches to determine the enabled states of the text fields
-        enableDisableTextFields(studentIEPSwitch, textField: studentIEP)
-        enableDisableTextFields(student401Switch, textField: student401Report)
-        enableDisableTextFields(studentConsentDateSwitch, textField: studentConsentDate)
+        studentFormUtil.utilEnableDisableTextFields(studentIEPSwitch, textField: studentIEP)
+        studentFormUtil.utilEnableDisableTextFields(student401Switch, textField: student401Report)
+        studentFormUtil.utilEnableDisableTextFields(studentConsentDateSwitch, textField: studentConsentDate)
         
         let ethnicityPicker = UIPickerView()
         ethnicityPicker.delegate = self
@@ -451,6 +376,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         //clear all the fields
         clearFunction("buttonPress")
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -527,12 +453,29 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             print("ERROR: Student Id field is empty")
             showAlert("Student ID Needed!", message: "Please enter the student Id.", dismissMsg: "OK")
             self.clearFunction("StudentId")
-            setBorderRed(studentID)
+            
+            studentFormUtil.utilSetBorderRed(studentID)
             return
         }
         else
         {
-            colorReset(studentID)
+            //colorReset(studentID)
+            studentFormUtil.utilColorReset(studentID)
+            studentFormUtil.utilColorReset(studentFirstname)
+            studentFormUtil.utilColorReset(studentLastname)
+            studentFormUtil.utilColorReset(studentPrimaryLang)
+            studentFormUtil.utilColorReset(studentDOB)
+            studentFormUtil.utilColorReset(studentConsentDate)
+            
+            if(studentIEPSwitch.isOn)
+            {
+             studentFormUtil.utilColorReset(studentIEP)
+            }
+            
+            if(student401Switch.isOn)
+            {
+             studentFormUtil.utilColorReset(student401Report)
+            }
         }
         
         //getting the student info based on ID
@@ -563,27 +506,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             //printing for debugging
             print(self.studentData)
             self.populateFormFields()
-            self.setPickerView(self.studentData.strStudentEthinicity, picker: self.studentEthnicity, array: self.studentEthnicityData)
-            self.setPickerView(self.studentData.strStudentGradeLevel, picker: self.studentGrade, array: self.studentGradeData)
-            self.setPickerView(self.studentData.strStudentLangProficiency, picker: self.studentLangProf, array: self.studentLangProfData)
+            self.studentFormUtil.utilSetPickerView(self.studentData.strStudentEthinicity, picker: self.studentEthnicity, array: self.studentEthnicityData)
+            self.studentFormUtil.utilSetPickerView(self.studentData.strStudentGradeLevel, picker: self.studentGrade, array: self.studentGradeData)
+            self.studentFormUtil.utilSetPickerView(self.studentData.strStudentLangProficiency, picker: self.studentLangProf, array: self.studentLangProfData)
             //function to fill out all the fields
         })
         
     }
     
-    func setPickerView(_ inputString: String, picker: UIPickerView, array: [String])
-    {
-        let index = array.index(of: inputString)
-        if(index != nil)
-        {
-            picker.selectRow(index!, inComponent: 0, animated: false)
-        }
-        else
-        {
-            picker.selectRow(0, inComponent: 0, animated: false)
-        }
-    }
-
     func populateFormFields()
     {
         studentFirstname.text = self.studentData.strStudentFirstname

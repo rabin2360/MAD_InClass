@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860329D21E148E6B0097289E /* StudentUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860329D11E148E6B0097289E /* StudentUtil.swift */; };
 		86123C871D95CCF600DB98F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86123C861D95CCF600DB98F8 /* AppDelegate.swift */; };
 		86123C891D95CCF600DB98F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86123C881D95CCF600DB98F8 /* ViewController.swift */; };
 		86123C8C1D95CCF600DB98F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86123C8A1D95CCF600DB98F8 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		0786225B6BD557F392089B1D /* Pods-Lab3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lab3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lab3/Pods-Lab3.debug.xcconfig"; sourceTree = "<group>"; };
 		787A34DBCD8E6E5D5673B534 /* Pods_Lab3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lab3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		860329D11E148E6B0097289E /* StudentUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentUtil.swift; sourceTree = "<group>"; };
 		86123C831D95CCF600DB98F8 /* COLA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COLA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86123C861D95CCF600DB98F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86123C881D95CCF600DB98F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				86123C881D95CCF600DB98F8 /* ViewController.swift */,
 				861917841DF23553001CE91D /* Constants.swift */,
 				86123C8A1D95CCF600DB98F8 /* Main.storyboard */,
+				860329D11E148E6B0097289E /* StudentUtil.swift */,
 				86123C901D95CCF600DB98F8 /* Assets.xcassets */,
 				86123C921D95CCF600DB98F8 /* LaunchScreen.storyboard */,
 				86123C951D95CCF600DB98F8 /* Info.plist */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860329D21E148E6B0097289E /* StudentUtil.swift in Sources */,
 				86123C891D95CCF600DB98F8 /* ViewController.swift in Sources */,
 				86123C871D95CCF600DB98F8 /* AppDelegate.swift in Sources */,
 				86123C8F1D95CCF600DB98F8 /* Lab3.xcdatamodeld in Sources */,
